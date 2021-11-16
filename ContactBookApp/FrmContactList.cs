@@ -43,7 +43,10 @@ namespace ContactBookApp
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (Closed())
+            {
+                this.Close();
+            }
         }
         private void BtnDarkAndLight_Click(object sender, EventArgs e)
         {
@@ -52,7 +55,10 @@ namespace ContactBookApp
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (Closed())
+            {
+                this.Close();
+            }
         }
         private void FrmContactList_Load(object sender, EventArgs e)
         {
@@ -90,7 +96,11 @@ namespace ContactBookApp
             FillDgv();
         }
 
-        private void FrmContactList_FormClosed(object sender, FormClosedEventArgs e)
+        #endregion
+
+        #region Method
+
+        private bool Closed()
         {
             FrmQuestion question = new FrmQuestion($"¿Estas seguro que desea cerrar sesión?");
 
@@ -98,17 +108,13 @@ namespace ContactBookApp
 
             if (result == DialogResult.OK)
             {
-                this.Close();
+                return true;
             }
             else
             {
-
+                return false;
             }
         }
-        #endregion
-
-        #region Method
-
         private void SwitchTheme()
         {
 
