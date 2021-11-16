@@ -42,18 +42,21 @@ namespace ContactBookApp
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnAddContact = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LblDarkAndLight = new System.Windows.Forms.Label();
             this.BtnDarkAndLight = new System.Windows.Forms.Button();
+            this.BtnAddContact = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvContacts)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -73,8 +76,8 @@ namespace ContactBookApp
             this.tableLayoutPanel1.Controls.Add(this.label4, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.BtnAddContact, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.BtnAddContact, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -240,21 +243,6 @@ namespace ContactBookApp
             this.label1.TabIndex = 0;
             this.label1.Text = "Code";
             // 
-            // BtnAddContact
-            // 
-            this.BtnAddContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnAddContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddContact.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnAddContact.Image = global::ContactBookApp.Properties.Resources.add_white;
-            this.BtnAddContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAddContact.Location = new System.Drawing.Point(3, 45);
-            this.BtnAddContact.Name = "BtnAddContact";
-            this.BtnAddContact.Size = new System.Drawing.Size(177, 53);
-            this.BtnAddContact.TabIndex = 7;
-            this.BtnAddContact.Text = "Add Contact";
-            this.BtnAddContact.UseVisualStyleBackColor = true;
-            this.BtnAddContact.Click += new System.EventHandler(this.BtnAddContact_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.LblDarkAndLight);
@@ -288,10 +276,26 @@ namespace ContactBookApp
             this.BtnDarkAndLight.UseVisualStyleBackColor = true;
             this.BtnDarkAndLight.Click += new System.EventHandler(this.BtnDarkAndLight_Click);
             // 
+            // BtnAddContact
+            // 
+            this.BtnAddContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnAddContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddContact.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAddContact.Image = global::ContactBookApp.Properties.Resources.add_white;
+            this.BtnAddContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAddContact.Location = new System.Drawing.Point(3, 45);
+            this.BtnAddContact.Name = "BtnAddContact";
+            this.BtnAddContact.Size = new System.Drawing.Size(177, 53);
+            this.BtnAddContact.TabIndex = 7;
+            this.BtnAddContact.Text = "Add Contact";
+            this.BtnAddContact.UseVisualStyleBackColor = true;
+            this.BtnAddContact.Click += new System.EventHandler(this.BtnAddContact_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(177)))), ((int)(((byte)(211)))));
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -309,6 +313,25 @@ namespace ContactBookApp
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(177)))), ((int)(((byte)(211)))));
+            this.menuStrip1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(924, 27);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(138, 23);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
             // FrmContactList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -319,8 +342,10 @@ namespace ContactBookApp
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmContactList";
             this.Text = "FrmContactList";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmContactList_FormClosed);
             this.Load += new System.EventHandler(this.FrmContactList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -329,7 +354,10 @@ namespace ContactBookApp
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -354,5 +382,7 @@ namespace ContactBookApp
         private System.Windows.Forms.Button BtnDarkAndLight;
         private System.Windows.Forms.Label LblDarkAndLight;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
     }
 }

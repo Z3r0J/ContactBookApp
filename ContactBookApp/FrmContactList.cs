@@ -35,6 +35,16 @@ namespace ContactBookApp
 
 
         #region Events
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void BtnDarkAndLight_Click(object sender, EventArgs e)
         {
             SwitchTheme();
@@ -79,6 +89,22 @@ namespace ContactBookApp
             DeleteContact();
             FillDgv();
         }
+
+        private void FrmContactList_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmQuestion question = new FrmQuestion($"¿Estas seguro que desea cerrar sesión?");
+
+            DialogResult result = question.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.Close();
+            }
+            else
+            {
+
+            }
+        }
         #endregion
 
         #region Method
@@ -102,6 +128,7 @@ namespace ContactBookApp
                 this.BackColor = Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
                 this.ForeColor = Color.White;
                 pictureBox1.Image = Properties.Resources.close_dark;
+                menuStrip1.ForeColor = Color.White;
             }
 
             else
@@ -120,6 +147,7 @@ namespace ContactBookApp
                 this.BackColor = Color.White;
                 this.ForeColor = Color.Black;
                 pictureBox1.Image = Properties.Resources.close32;
+                menuStrip1.ForeColor = Color.Black;
             }
         }
 
@@ -207,13 +235,8 @@ namespace ContactBookApp
             }
         }
 
-        #endregion
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        #endregion
     }
 
 
