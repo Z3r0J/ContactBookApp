@@ -32,7 +32,7 @@ create procedure SP_RegisterUser
 @UserName nvarchar(50),
 @Password nvarchar(30)
 as
-insert into Tbl_Users values(@Name,@LastName,@UserName,@Password)
+insert into Tbl_Usezrs values(@Name,@LastName,@UserName,@Password)
 
 end
 
@@ -48,7 +48,8 @@ WorkPhone nvarchar(30) not null,
 IdUser int foreign key references Tbl_Users(IdUser)
 )
 
-create procedure SP_ListContact 
+select * from Tbl_Contact
+Alter procedure SP_ListContact 
 @IdUser int
 as
 select cs.IdContact as Code, cs.ContactName, cs.LastName, cs.Adress, cs.PersonalPhone, cs.WorkPhone from Tbl_Contact as cs

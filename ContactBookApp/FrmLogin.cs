@@ -70,6 +70,10 @@ namespace ContactBookApp
                 frm.BtnContinue.ForeColor = Color.FromArgb(0, 37, 211, 111);
                 frm.ShowDialog();
                 this.Hide();
+
+                FrmContactList list = new FrmContactList();
+                list.IdLogged = IsLogin.IdUser;
+                list.Show();
             }
             else
             {
