@@ -1,7 +1,7 @@
 ﻿
 namespace ContactBookApp
 {
-    partial class FrmRegister
+    partial class FrmAddContact
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace ContactBookApp
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnRegistrarte = new System.Windows.Forms.Button();
+            this.BtnSaveContact = new System.Windows.Forms.Button();
             this.BtnLightAndDarkTheme = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PbxTheme = new System.Windows.Forms.PictureBox();
@@ -44,19 +44,19 @@ namespace ContactBookApp
             this.PbxLastName = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.PbxUserName = new System.Windows.Forms.PictureBox();
             this.LblUserName = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.PbxPassword = new System.Windows.Forms.PictureBox();
             this.LblPassword = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.PbxConfirmPassword = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TxtName = new System.Windows.Forms.TextBox();
-            this.TxtUsername = new System.Windows.Forms.TextBox();
-            this.TxtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.TxtPassword = new System.Windows.Forms.TextBox();
             this.TxtLastName = new System.Windows.Forms.TextBox();
+            this.TxtAdress = new System.Windows.Forms.TextBox();
+            this.MTxtPersonalPhone = new System.Windows.Forms.MaskedTextBox();
+            this.MTxtWorkPhone = new System.Windows.Forms.MaskedTextBox();
+            this.PbxAdress = new System.Windows.Forms.PictureBox();
+            this.PbxPersonal = new System.Windows.Forms.PictureBox();
+            this.PbxWork = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -67,11 +67,11 @@ namespace ContactBookApp
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxLastName)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxUserName)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxPassword)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxConfirmPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxAdress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPersonal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxWork)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,10 +88,10 @@ namespace ContactBookApp
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ContactBookApp.Properties.Resources.close32;
-            this.pictureBox1.Location = new System.Drawing.Point(374, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(377, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
@@ -100,7 +100,7 @@ namespace ContactBookApp
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.BtnRegistrarte, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.BtnSaveContact, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.BtnLightAndDarkTheme, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
@@ -109,10 +109,10 @@ namespace ContactBookApp
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.TxtName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.TxtUsername, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.TxtConfirmPassword, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.TxtPassword, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.TxtLastName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.TxtAdress, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.MTxtPersonalPhone, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.MTxtWorkPhone, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -125,25 +125,25 @@ namespace ContactBookApp
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28356F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28082F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(412, 390);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(412, 382);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // BtnRegistrarte
+            // BtnSaveContact
             // 
-            this.BtnRegistrarte.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnRegistrarte.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.BtnRegistrarte, 2);
-            this.BtnRegistrarte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRegistrarte.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.BtnRegistrarte.Image = global::ContactBookApp.Properties.Resources.save_white;
-            this.BtnRegistrarte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRegistrarte.Location = new System.Drawing.Point(107, 336);
-            this.BtnRegistrarte.Name = "BtnRegistrarte";
-            this.BtnRegistrarte.Size = new System.Drawing.Size(198, 48);
-            this.BtnRegistrarte.TabIndex = 5;
-            this.BtnRegistrarte.Text = "Registrarme";
-            this.BtnRegistrarte.UseVisualStyleBackColor = true;
-            this.BtnRegistrarte.Click += new System.EventHandler(this.BtnRegistrarte_Click);
+            this.BtnSaveContact.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnSaveContact.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.BtnSaveContact, 2);
+            this.BtnSaveContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSaveContact.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.BtnSaveContact.Image = global::ContactBookApp.Properties.Resources.save_white;
+            this.BtnSaveContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSaveContact.Location = new System.Drawing.Point(107, 333);
+            this.BtnSaveContact.Name = "BtnSaveContact";
+            this.BtnSaveContact.Size = new System.Drawing.Size(198, 40);
+            this.BtnSaveContact.TabIndex = 5;
+            this.BtnSaveContact.Text = "Save Contact";
+            this.BtnSaveContact.UseVisualStyleBackColor = true;
+            this.BtnSaveContact.Click += new System.EventHandler(this.BtnSaveContact_Click);
             // 
             // BtnLightAndDarkTheme
             // 
@@ -156,7 +156,7 @@ namespace ContactBookApp
             this.BtnLightAndDarkTheme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnLightAndDarkTheme.Location = new System.Drawing.Point(209, 3);
             this.BtnLightAndDarkTheme.Name = "BtnLightAndDarkTheme";
-            this.BtnLightAndDarkTheme.Size = new System.Drawing.Size(200, 49);
+            this.BtnLightAndDarkTheme.Size = new System.Drawing.Size(200, 48);
             this.BtnLightAndDarkTheme.TabIndex = 6;
             this.BtnLightAndDarkTheme.Text = "Light Theme ☀";
             this.BtnLightAndDarkTheme.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@ namespace ContactBookApp
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 49);
+            this.panel2.Size = new System.Drawing.Size(200, 48);
             this.panel2.TabIndex = 7;
             // 
             // PbxTheme
@@ -198,9 +198,9 @@ namespace ContactBookApp
             this.panel3.Controls.Add(this.PbxName);
             this.panel3.Controls.Add(this.LblName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 58);
+            this.panel3.Location = new System.Drawing.Point(3, 57);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 49);
+            this.panel3.Size = new System.Drawing.Size(200, 48);
             this.panel3.TabIndex = 8;
             // 
             // PbxName
@@ -230,9 +230,9 @@ namespace ContactBookApp
             this.panel4.Controls.Add(this.PbxLastName);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 113);
+            this.panel4.Location = new System.Drawing.Point(3, 111);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 49);
+            this.panel4.Size = new System.Drawing.Size(200, 48);
             this.panel4.TabIndex = 9;
             // 
             // PbxLastName
@@ -259,23 +259,13 @@ namespace ContactBookApp
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.PbxUserName);
+            this.panel5.Controls.Add(this.PbxAdress);
             this.panel5.Controls.Add(this.LblUserName);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 168);
+            this.panel5.Location = new System.Drawing.Point(3, 165);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 49);
+            this.panel5.Size = new System.Drawing.Size(200, 48);
             this.panel5.TabIndex = 10;
-            // 
-            // PbxUserName
-            // 
-            this.PbxUserName.Image = global::ContactBookApp.Properties.Resources.username_white;
-            this.PbxUserName.Location = new System.Drawing.Point(84, 19);
-            this.PbxUserName.Name = "PbxUserName";
-            this.PbxUserName.Size = new System.Drawing.Size(16, 16);
-            this.PbxUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PbxUserName.TabIndex = 3;
-            this.PbxUserName.TabStop = false;
             // 
             // LblUserName
             // 
@@ -283,31 +273,21 @@ namespace ContactBookApp
             this.LblUserName.AutoSize = true;
             this.LblUserName.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.LblUserName.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblUserName.Location = new System.Drawing.Point(105, 18);
+            this.LblUserName.Location = new System.Drawing.Point(137, 19);
             this.LblUserName.Name = "LblUserName";
-            this.LblUserName.Size = new System.Drawing.Size(91, 19);
+            this.LblUserName.Size = new System.Drawing.Size(59, 19);
             this.LblUserName.TabIndex = 2;
-            this.LblUserName.Text = "UserName: ";
+            this.LblUserName.Text = "Adress:";
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.PbxPassword);
+            this.panel6.Controls.Add(this.PbxPersonal);
             this.panel6.Controls.Add(this.LblPassword);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 223);
+            this.panel6.Location = new System.Drawing.Point(3, 219);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 49);
+            this.panel6.Size = new System.Drawing.Size(200, 48);
             this.panel6.TabIndex = 11;
-            // 
-            // PbxPassword
-            // 
-            this.PbxPassword.Image = global::ContactBookApp.Properties.Resources.password_white;
-            this.PbxPassword.Location = new System.Drawing.Point(91, 20);
-            this.PbxPassword.Name = "PbxPassword";
-            this.PbxPassword.Size = new System.Drawing.Size(16, 16);
-            this.PbxPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PbxPassword.TabIndex = 4;
-            this.PbxPassword.TabStop = false;
             // 
             // LblPassword
             // 
@@ -315,42 +295,32 @@ namespace ContactBookApp
             this.LblPassword.AutoSize = true;
             this.LblPassword.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.LblPassword.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblPassword.Location = new System.Drawing.Point(113, 19);
+            this.LblPassword.Location = new System.Drawing.Point(75, 17);
             this.LblPassword.Name = "LblPassword";
-            this.LblPassword.Size = new System.Drawing.Size(82, 19);
+            this.LblPassword.Size = new System.Drawing.Size(121, 19);
             this.LblPassword.TabIndex = 3;
-            this.LblPassword.Text = "Password: ";
+            this.LblPassword.Text = "Personal Phone:";
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.PbxConfirmPassword);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Location = new System.Drawing.Point(3, 278);
+            this.panel7.Controls.Add(this.PbxWork);
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Location = new System.Drawing.Point(3, 273);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 49);
+            this.panel7.Size = new System.Drawing.Size(200, 48);
             this.panel7.TabIndex = 12;
             // 
-            // PbxConfirmPassword
+            // label1
             // 
-            this.PbxConfirmPassword.Image = global::ContactBookApp.Properties.Resources.password_white;
-            this.PbxConfirmPassword.Location = new System.Drawing.Point(34, 23);
-            this.PbxConfirmPassword.Name = "PbxConfirmPassword";
-            this.PbxConfirmPassword.Size = new System.Drawing.Size(16, 16);
-            this.PbxConfirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PbxConfirmPassword.TabIndex = 5;
-            this.PbxConfirmPassword.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label5.AutoSize = true;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label5.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(56, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Confirm Password: ";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(96, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Work Phone:";
             // 
             // TxtName
             // 
@@ -358,49 +328,11 @@ namespace ContactBookApp
             this.TxtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.TxtName.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtName.ForeColor = System.Drawing.Color.White;
-            this.TxtName.Location = new System.Drawing.Point(209, 63);
+            this.TxtName.Location = new System.Drawing.Point(209, 61);
             this.TxtName.Multiline = true;
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(200, 39);
             this.TxtName.TabIndex = 13;
-            // 
-            // TxtUsername
-            // 
-            this.TxtUsername.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.TxtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.TxtUsername.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtUsername.ForeColor = System.Drawing.Color.White;
-            this.TxtUsername.Location = new System.Drawing.Point(209, 173);
-            this.TxtUsername.Multiline = true;
-            this.TxtUsername.Name = "TxtUsername";
-            this.TxtUsername.Size = new System.Drawing.Size(200, 39);
-            this.TxtUsername.TabIndex = 15;
-            // 
-            // TxtConfirmPassword
-            // 
-            this.TxtConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.TxtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.TxtConfirmPassword.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.TxtConfirmPassword.Location = new System.Drawing.Point(209, 282);
-            this.TxtConfirmPassword.Multiline = true;
-            this.TxtConfirmPassword.Name = "TxtConfirmPassword";
-            this.TxtConfirmPassword.PasswordChar = '*';
-            this.TxtConfirmPassword.Size = new System.Drawing.Size(200, 40);
-            this.TxtConfirmPassword.TabIndex = 17;
-            // 
-            // TxtPassword
-            // 
-            this.TxtPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.TxtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.TxtPassword.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtPassword.ForeColor = System.Drawing.Color.White;
-            this.TxtPassword.Location = new System.Drawing.Point(209, 228);
-            this.TxtPassword.Multiline = true;
-            this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.PasswordChar = '*';
-            this.TxtPassword.Size = new System.Drawing.Size(200, 39);
-            this.TxtPassword.TabIndex = 16;
             // 
             // TxtLastName
             // 
@@ -408,22 +340,89 @@ namespace ContactBookApp
             this.TxtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
             this.TxtLastName.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtLastName.ForeColor = System.Drawing.Color.White;
-            this.TxtLastName.Location = new System.Drawing.Point(209, 118);
+            this.TxtLastName.Location = new System.Drawing.Point(209, 115);
             this.TxtLastName.Multiline = true;
             this.TxtLastName.Name = "TxtLastName";
             this.TxtLastName.Size = new System.Drawing.Size(200, 39);
             this.TxtLastName.TabIndex = 14;
             // 
-            // FrmRegister
+            // TxtAdress
+            // 
+            this.TxtAdress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TxtAdress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.TxtAdress.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtAdress.ForeColor = System.Drawing.Color.White;
+            this.TxtAdress.Location = new System.Drawing.Point(209, 169);
+            this.TxtAdress.Multiline = true;
+            this.TxtAdress.Name = "TxtAdress";
+            this.TxtAdress.Size = new System.Drawing.Size(200, 39);
+            this.TxtAdress.TabIndex = 15;
+            // 
+            // MTxtPersonalPhone
+            // 
+            this.MTxtPersonalPhone.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.MTxtPersonalPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.MTxtPersonalPhone.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MTxtPersonalPhone.ForeColor = System.Drawing.Color.White;
+            this.MTxtPersonalPhone.Location = new System.Drawing.Point(209, 223);
+            this.MTxtPersonalPhone.Mask = "(999) 000-0000";
+            this.MTxtPersonalPhone.Name = "MTxtPersonalPhone";
+            this.MTxtPersonalPhone.PromptChar = '*';
+            this.MTxtPersonalPhone.Size = new System.Drawing.Size(200, 40);
+            this.MTxtPersonalPhone.TabIndex = 16;
+            // 
+            // MTxtWorkPhone
+            // 
+            this.MTxtWorkPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.MTxtWorkPhone.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MTxtWorkPhone.ForeColor = System.Drawing.Color.White;
+            this.MTxtWorkPhone.Location = new System.Drawing.Point(209, 273);
+            this.MTxtWorkPhone.Mask = "(999) 000-0000";
+            this.MTxtWorkPhone.Name = "MTxtWorkPhone";
+            this.MTxtWorkPhone.PromptChar = '*';
+            this.MTxtWorkPhone.Size = new System.Drawing.Size(200, 40);
+            this.MTxtWorkPhone.TabIndex = 17;
+            // 
+            // PbxAdress
+            // 
+            this.PbxAdress.Image = global::ContactBookApp.Properties.Resources.adress_white;
+            this.PbxAdress.Location = new System.Drawing.Point(115, 22);
+            this.PbxAdress.Name = "PbxAdress";
+            this.PbxAdress.Size = new System.Drawing.Size(16, 16);
+            this.PbxAdress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbxAdress.TabIndex = 4;
+            this.PbxAdress.TabStop = false;
+            // 
+            // PbxPersonal
+            // 
+            this.PbxPersonal.Image = global::ContactBookApp.Properties.Resources.personal_white;
+            this.PbxPersonal.Location = new System.Drawing.Point(53, 20);
+            this.PbxPersonal.Name = "PbxPersonal";
+            this.PbxPersonal.Size = new System.Drawing.Size(16, 16);
+            this.PbxPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbxPersonal.TabIndex = 4;
+            this.PbxPersonal.TabStop = false;
+            // 
+            // PbxWork
+            // 
+            this.PbxWork.Image = global::ContactBookApp.Properties.Resources.work_white;
+            this.PbxWork.Location = new System.Drawing.Point(74, 23);
+            this.PbxWork.Name = "PbxWork";
+            this.PbxWork.Size = new System.Drawing.Size(16, 16);
+            this.PbxWork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbxWork.TabIndex = 5;
+            this.PbxWork.TabStop = false;
+            // 
+            // FrmAddContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(412, 433);
+            this.ClientSize = new System.Drawing.Size(412, 425);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmRegister";
+            this.Name = "FrmAddContact";
             this.Text = "FrmRegister";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -440,13 +439,13 @@ namespace ContactBookApp
             ((System.ComponentModel.ISupportInitialize)(this.PbxLastName)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxUserName)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxPassword)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxConfirmPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxAdress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPersonal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxWork)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,8 +454,7 @@ namespace ContactBookApp
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button BtnRegistrarte;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button BtnSaveContact;
         private System.Windows.Forms.Label LblPassword;
         private System.Windows.Forms.Label LblUserName;
         private System.Windows.Forms.Label label2;
@@ -468,18 +466,19 @@ namespace ContactBookApp
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox TxtName;
-        private System.Windows.Forms.TextBox TxtUsername;
-        private System.Windows.Forms.TextBox TxtConfirmPassword;
-        private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.TextBox TxtLastName;
         private System.Windows.Forms.PictureBox PbxTheme;
         private System.Windows.Forms.PictureBox PbxName;
         private System.Windows.Forms.PictureBox PbxLastName;
-        private System.Windows.Forms.PictureBox PbxUserName;
-        private System.Windows.Forms.PictureBox PbxPassword;
-        private System.Windows.Forms.PictureBox PbxConfirmPassword;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox TxtName;
+        public System.Windows.Forms.TextBox TxtLastName;
+        public System.Windows.Forms.TextBox TxtAdress;
+        public System.Windows.Forms.MaskedTextBox MTxtPersonalPhone;
+        public System.Windows.Forms.MaskedTextBox MTxtWorkPhone;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PbxAdress;
+        private System.Windows.Forms.PictureBox PbxPersonal;
+        private System.Windows.Forms.PictureBox PbxWork;
     }
 }

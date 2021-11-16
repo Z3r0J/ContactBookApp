@@ -49,6 +49,15 @@ namespace ContactBookApp
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void Btn_Register_Click(object sender, System.EventArgs e)
+        {
+            FrmRegister frm = new FrmRegister();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+
+        }
+
         #endregion
 
         #region Methods
@@ -70,10 +79,14 @@ namespace ContactBookApp
                 frm.BtnContinue.ForeColor = Color.FromArgb(0, 37, 211, 111);
                 frm.ShowDialog();
                 this.Hide();
+                
 
                 FrmContactList list = new FrmContactList();
                 list.IdLogged = IsLogin.IdUser;
-                list.Show();
+                list.ShowDialog();
+                ClearData();
+                this.Show();
+
             }
             else
             {
@@ -82,6 +95,18 @@ namespace ContactBookApp
             return Log;
         }
 
+        public void ClearData()
+        {
+            Txt_Password.Clear();
+            Txt_Username.Clear();
+            Txt_Username.Focus();
+
+        }
         #endregion
+
+        private void pictureBox4_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

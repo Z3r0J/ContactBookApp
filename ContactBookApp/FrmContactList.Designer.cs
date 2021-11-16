@@ -44,13 +44,16 @@ namespace ContactBookApp
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAddContact = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.LblDarkAndLight = new System.Windows.Forms.Label();
             this.BtnDarkAndLight = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LblDarkAndLight = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvContacts)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -86,34 +89,47 @@ namespace ContactBookApp
             // 
             this.BtnDeselect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnDeselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeselect.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnDeselect.Image = global::ContactBookApp.Properties.Resources.deselect_white;
+            this.BtnDeselect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDeselect.Location = new System.Drawing.Point(555, 45);
             this.BtnDeselect.Name = "BtnDeselect";
             this.BtnDeselect.Size = new System.Drawing.Size(177, 53);
             this.BtnDeselect.TabIndex = 10;
             this.BtnDeselect.Text = "Deselect Row";
             this.BtnDeselect.UseVisualStyleBackColor = true;
+            this.BtnDeselect.Visible = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // BtnDelete
             // 
             this.BtnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDelete.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnDelete.Image = global::ContactBookApp.Properties.Resources.delete_white;
+            this.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.Location = new System.Drawing.Point(357, 45);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(192, 53);
             this.BtnDelete.TabIndex = 9;
             this.BtnDelete.Text = "Delete Contact";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnEdit
             // 
             this.BtnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEdit.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnEdit.Image = global::ContactBookApp.Properties.Resources.edit_white;
+            this.BtnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEdit.Location = new System.Drawing.Point(187, 45);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(163, 53);
             this.BtnEdit.TabIndex = 8;
             this.BtnEdit.Text = "Edit Contact";
             this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // DtgvContacts
             // 
@@ -148,6 +164,7 @@ namespace ContactBookApp
             this.DtgvContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgvContacts.Size = new System.Drawing.Size(918, 305);
             this.DtgvContacts.TabIndex = 0;
+            this.DtgvContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgvContacts_CellContentClick);
             // 
             // label2
             // 
@@ -227,6 +244,8 @@ namespace ContactBookApp
             // 
             this.BtnAddContact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnAddContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddContact.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAddContact.Image = global::ContactBookApp.Properties.Resources.add_white;
             this.BtnAddContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAddContact.Location = new System.Drawing.Point(3, 45);
             this.BtnAddContact.Name = "BtnAddContact";
@@ -234,6 +253,7 @@ namespace ContactBookApp
             this.BtnAddContact.TabIndex = 7;
             this.BtnAddContact.Text = "Add Contact";
             this.BtnAddContact.UseVisualStyleBackColor = true;
+            this.BtnAddContact.Click += new System.EventHandler(this.BtnAddContact_Click);
             // 
             // panel3
             // 
@@ -245,32 +265,49 @@ namespace ContactBookApp
             this.panel3.Size = new System.Drawing.Size(182, 95);
             this.panel3.TabIndex = 11;
             // 
-            // BtnDarkAndLight
-            // 
-            this.BtnDarkAndLight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnDarkAndLight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDarkAndLight.Location = new System.Drawing.Point(67, 42);
-            this.BtnDarkAndLight.Name = "BtnDarkAndLight";
-            this.BtnDarkAndLight.Size = new System.Drawing.Size(113, 53);
-            this.BtnDarkAndLight.TabIndex = 11;
-            this.BtnDarkAndLight.Text = "Light";
-            this.BtnDarkAndLight.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(924, 39);
-            this.panel1.TabIndex = 1;
-            // 
             // LblDarkAndLight
             // 
+            this.LblDarkAndLight.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblDarkAndLight.Location = new System.Drawing.Point(2, 51);
             this.LblDarkAndLight.Name = "LblDarkAndLight";
             this.LblDarkAndLight.Size = new System.Drawing.Size(62, 34);
             this.LblDarkAndLight.TabIndex = 12;
             this.LblDarkAndLight.Text = "Switch Theme:";
+            // 
+            // BtnDarkAndLight
+            // 
+            this.BtnDarkAndLight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnDarkAndLight.FlatAppearance.BorderSize = 0;
+            this.BtnDarkAndLight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDarkAndLight.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnDarkAndLight.Location = new System.Drawing.Point(67, 42);
+            this.BtnDarkAndLight.Name = "BtnDarkAndLight";
+            this.BtnDarkAndLight.Size = new System.Drawing.Size(113, 53);
+            this.BtnDarkAndLight.TabIndex = 11;
+            this.BtnDarkAndLight.Text = "Light ☀";
+            this.BtnDarkAndLight.UseVisualStyleBackColor = true;
+            this.BtnDarkAndLight.Click += new System.EventHandler(this.BtnDarkAndLight_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(177)))), ((int)(((byte)(211)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(924, 39);
+            this.panel1.TabIndex = 1;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ContactBookApp.Properties.Resources.close32;
+            this.pictureBox1.Location = new System.Drawing.Point(886, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrmContactList
             // 
@@ -281,6 +318,7 @@ namespace ContactBookApp
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmContactList";
             this.Text = "FrmContactList";
             this.Load += new System.EventHandler(this.FrmContactList_Load);
@@ -290,6 +328,8 @@ namespace ContactBookApp
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +353,6 @@ namespace ContactBookApp
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BtnDarkAndLight;
         private System.Windows.Forms.Label LblDarkAndLight;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

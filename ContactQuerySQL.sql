@@ -49,6 +49,7 @@ IdUser int foreign key references Tbl_Users(IdUser)
 )
 
 select * from Tbl_Contact
+
 Alter procedure SP_ListContact 
 @IdUser int
 as
@@ -56,14 +57,6 @@ select cs.IdContact as Code, cs.ContactName, cs.LastName, cs.Adress, cs.Personal
 inner join Tbl_Users as us
 on cs.IdUser = us.IdUser
 where us.IdUser = @IdUser
-
-create procedure SP_ListContactById
-@IdContact int
-as
-select cs.IdContact as Code, cs.ContactName, cs.LastName, cs.Adress, cs.PersonalPhone, cs.WorkPhone from Tbl_Contact as cs
-inner join Tbl_Users as us
-on cs.IdUser = us.IdUser
-where cs.IdContact=@IdContact
 
 create procedure SP_InsertContact
 @ContactName nvarchar(100),
@@ -76,13 +69,20 @@ as
 insert into Tbl_Contact values(@ContactName,@LastName,@Adress,@PersonalPhone,@WorkPhone,@IdUser)
 
 create procedure SP_UpdateContact
-@IdContact int,
 @ContactName nvarchar(100),
 @LastName nvarchar(100),
 @Adress nvarchar(150),
 @PersonalPhone nvarchar(30),
-@WorkPhone nvarchar(30)
+@WorkPhone nvarchar(30),
+@IdContact int
 as
 Update Tbl_Contact set ContactName = @ContactName,LastName=@LastName,Adress=@Adress,PersonalPhone=@PersonalPhone,WorkPhone=@WorkPhone
 where IdContact = @IdContact
+
+
+create procedure SP_DeleteContact
+@IdContact int
+as
+Delete from Tbl_Contact where IdContact=@IdContact;
+
 end

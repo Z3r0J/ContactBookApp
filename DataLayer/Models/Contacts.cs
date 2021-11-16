@@ -12,5 +12,7 @@ namespace DataLayer.Models
         public string Adress { get; set; }
         public string PersonalPhone { get; set; }
         public string WorkPhone { get; set; }
+        public int IdUser { get; set; }
+
     }
 }

@@ -30,6 +30,44 @@ namespace DataLayer
             return ListsAll(cmd);
         }
 
+        public bool AddContact(Contacts contacts)
+        {
+            SqlCommand cmd = new SqlCommand("SP_InsertContact", _connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@ContactName", contacts.ContactName);
+            cmd.Parameters.AddWithValue("@LastName", contacts.LastName);
+            cmd.Parameters.AddWithValue("@Adress", contacts.Adress);
+            cmd.Parameters.AddWithValue("@PersonalPhone", contacts.PersonalPhone);
+            cmd.Parameters.AddWithValue("@WorkPhone", contacts.WorkPhone);
+            cmd.Parameters.AddWithValue("@IdUser", contacts.IdUser);
+            return ExecuteProc(cmd);
+        }
+
+
+        public bool DeleteContact(int Id)
+        {
+            SqlCommand cmd = new SqlCommand("SP_DeleteContact", _connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdContact", Id);
+
+            return ExecuteProc(cmd);
+        }
+
+        public bool EditContact(Contacts contacts,int Id)
+        {
+            SqlCommand cmd = new SqlCommand("SP_UpdateContact", _connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@ContactName", contacts.ContactName);
+            cmd.Parameters.AddWithValue("@LastName", contacts.LastName);
+            cmd.Parameters.AddWithValue("@Adress", contacts.Adress);
+            cmd.Parameters.AddWithValue("@PersonalPhone", contacts.PersonalPhone);
+            cmd.Parameters.AddWithValue("@WorkPhone", contacts.WorkPhone);
+            cmd.Parameters.AddWithValue("@IdContact", Id);
+            return ExecuteProc(cmd);
+        }
 
         #region Execution Commands
 

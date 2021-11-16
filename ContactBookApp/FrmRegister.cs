@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -30,6 +31,15 @@ namespace ContactBookApp
             
         }
 
+        #region DLLFORTHEBAR
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
+        #endregion
+
+        #region Events
         private void BtnLightAndDarkTheme_Click(object sender, EventArgs e)
         {
            
@@ -62,6 +72,7 @@ namespace ContactBookApp
                 PbxLastName.Image = Properties.Resources.name_black;
                 PbxPassword.Image = Properties.Resources.password_dark;
                 PbxConfirmPassword.Image = Properties.Resources.password_dark;
+                pictureBox1.Image = Properties.Resources.close_dark;
 
                 BtnRegistrarte.Image = Properties.Resources.save_black;
 
@@ -95,6 +106,7 @@ namespace ContactBookApp
                 PbxLastName.Image = Properties.Resources.name_white;
                 PbxPassword.Image = Properties.Resources.password_white;
                 PbxConfirmPassword.Image = Properties.Resources.password_white;
+                pictureBox1.Image = Properties.Resources.close32;
 
                 BtnRegistrarte.Image = Properties.Resources.save_white;
             }
@@ -103,7 +115,21 @@ namespace ContactBookApp
         private void BtnRegistrarte_Click(object sender, EventArgs e)
         {
             ValidatingInsertData();
+
+            this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
 
 
         #region Methods
@@ -192,5 +218,6 @@ namespace ContactBookApp
         }
 
         #endregion
+
     }
 }

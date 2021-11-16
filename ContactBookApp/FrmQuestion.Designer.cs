@@ -1,7 +1,7 @@
 ﻿
 namespace ContactBookApp
 {
-    partial class FrmNotify
+    partial class FrmQuestion
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,11 @@ namespace ContactBookApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNotify));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuestion));
             this.PnInit = new System.Windows.Forms.Panel();
             this.BtnContinue = new System.Windows.Forms.Button();
             this.LblMensaje = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PnInit
@@ -51,14 +52,14 @@ namespace ContactBookApp
             this.BtnContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnContinue.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(53)))), ((int)(((byte)(37)))));
+            this.BtnContinue.ForeColor = System.Drawing.Color.Lime;
             this.BtnContinue.Image = global::ContactBookApp.Properties.Resources._continue;
             this.BtnContinue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnContinue.Location = new System.Drawing.Point(89, 161);
+            this.BtnContinue.Location = new System.Drawing.Point(12, 161);
             this.BtnContinue.Name = "BtnContinue";
-            this.BtnContinue.Size = new System.Drawing.Size(168, 44);
+            this.BtnContinue.Size = new System.Drawing.Size(140, 44);
             this.BtnContinue.TabIndex = 1;
-            this.BtnContinue.Text = "Continue!";
+            this.BtnContinue.Text = "OK";
             this.BtnContinue.UseVisualStyleBackColor = false;
             this.BtnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
             // 
@@ -74,7 +75,25 @@ namespace ContactBookApp
             this.LblMensaje.Text = "label1";
             this.LblMensaje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // FrmNotify
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(53)))), ((int)(((byte)(37)))));
+            this.button1.Image = global::ContactBookApp.Properties.Resources._continue;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(198, 161);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 44);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "CANCEL";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FrmQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,11 +101,12 @@ namespace ContactBookApp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(350, 217);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.LblMensaje);
             this.Controls.Add(this.BtnContinue);
             this.Controls.Add(this.PnInit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmNotify";
+            this.Name = "FrmQuestion";
             this.Text = "Notification";
             this.ResumeLayout(false);
 
@@ -96,5 +116,6 @@ namespace ContactBookApp
         private System.Windows.Forms.Label LblMensaje;
         public System.Windows.Forms.Button BtnContinue;
         public System.Windows.Forms.Panel PnInit;
+        public System.Windows.Forms.Button button1;
     }
 }

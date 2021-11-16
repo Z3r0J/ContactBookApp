@@ -98,6 +98,7 @@ namespace ContactBookApp
             this.Btn_Register.TabIndex = 12;
             this.Btn_Register.Text = "¿Don\'t have an account?, Click Here!";
             this.Btn_Register.UseVisualStyleBackColor = false;
+            this.Btn_Register.Click += new System.EventHandler(this.Btn_Register_Click);
             // 
             // Btn_Login
             // 
@@ -249,6 +250,7 @@ namespace ContactBookApp
             this.pictureBox4.Size = new System.Drawing.Size(32, 33);
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox3
             // 

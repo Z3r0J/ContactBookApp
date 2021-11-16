@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace ContactBookApp
 {
-    public partial class FrmNotify : Form
+    public partial class FrmQuestion : Form
     {
-        public FrmNotify(string mensaje)
+        public FrmQuestion(string mensaje)
         {
             InitializeComponent();
 
@@ -19,7 +19,12 @@ namespace ContactBookApp
 
         private void BtnContinue_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }
