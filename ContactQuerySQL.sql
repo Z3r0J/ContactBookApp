@@ -21,6 +21,11 @@ select * from Tbl_Users where UserName = @UserName and Password=@Password
 
 exec SP_LoginUser 'JPerez','123Abc'
 
+Alter procedure SP_ExistUser
+@UserName nvarchar(50)
+as
+select IdUser,UserName from Tbl_Users as c where UserName = @UserName
+
 create procedure SP_RegisterUser
 @Name nvarchar(100),
 @LastName nvarchar(100),

@@ -40,6 +40,31 @@ namespace ContactBookApp
                 this.ForeColor = Color.White;
                 BtnLightAndDarkTheme.Text = "Dark Theme 🌑";
                 BtnLightAndDarkTheme.ForeColor = Color.White;
+
+                TxtName.BackColor = Color.White;
+                TxtName.ForeColor = Color.Black;
+
+                TxtLastName.BackColor = Color.White;
+                TxtLastName.ForeColor = Color.Black;
+
+                TxtPassword.BackColor = Color.White;
+                TxtPassword.ForeColor = Color.Black;
+
+                TxtConfirmPassword.BackColor = Color.White;
+                TxtConfirmPassword.ForeColor = Color.Black;
+
+                TxtUsername.BackColor = Color.White;
+                TxtUsername.ForeColor = Color.Black;
+
+                PbxTheme.Image = Properties.Resources.theme_black;
+                PbxName.Image = Properties.Resources.name_black;
+                PbxUserName.Image = Properties.Resources.username_black;
+                PbxLastName.Image = Properties.Resources.name_black;
+                PbxPassword.Image = Properties.Resources.password_dark;
+                PbxConfirmPassword.Image = Properties.Resources.password_dark;
+
+                BtnRegistrarte.Image = Properties.Resources.save_black;
+
             }
             else
             {
@@ -48,6 +73,30 @@ namespace ContactBookApp
                 BtnLightAndDarkTheme.Text = "Light Theme ☀";
                 this.ForeColor = Color.Black;
                 BtnLightAndDarkTheme.ForeColor = Color.Black;
+
+                TxtName.BackColor = Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+                TxtName.ForeColor = Color.White;
+
+                TxtLastName.BackColor = Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+                TxtLastName.ForeColor = Color.White;
+
+                TxtPassword.BackColor = Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+                TxtPassword.ForeColor = Color.White;
+
+                TxtConfirmPassword.BackColor = Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+                TxtConfirmPassword.ForeColor = Color.White;
+
+                TxtUsername.BackColor = Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+                TxtUsername.ForeColor = Color.White;
+
+                PbxTheme.Image = Properties.Resources.theme_white;
+                PbxName.Image = Properties.Resources.name_white;
+                PbxUserName.Image = Properties.Resources.username_white;
+                PbxLastName.Image = Properties.Resources.name_white;
+                PbxPassword.Image = Properties.Resources.password_white;
+                PbxConfirmPassword.Image = Properties.Resources.password_white;
+
+                BtnRegistrarte.Image = Properties.Resources.save_white;
             }
         }
 
@@ -101,7 +150,7 @@ namespace ContactBookApp
             {
                 if (IsRegister())
                 {
-                    FrmNotify frm = new FrmNotify($"Usted {TxtName.Text} ha sido registrado con exito a ContactAppBook, por favor utilize la app sabiamente para evitar inconveniente.");
+                    FrmNotify frm = new FrmNotify($"Usted {TxtName.Text} ha sido registrado con exito a ContactAppBook, por favor utilize la app sabiamente para evitar inconvenientes.");
                     frm.PnInit.BackColor = Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(211)))), ((int)(((byte)(111)))));
                     frm.BtnContinue.ForeColor = Color.FromArgb(0, 37, 211, 111);
                     frm.ShowDialog();

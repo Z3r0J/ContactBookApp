@@ -47,12 +47,14 @@ namespace ContactBookApp
             // BtnContinue
             // 
             this.BtnContinue.BackColor = System.Drawing.Color.Transparent;
+            this.BtnContinue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnContinue.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(53)))), ((int)(((byte)(37)))));
             this.BtnContinue.Image = global::ContactBookApp.Properties.Resources._continue;
             this.BtnContinue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnContinue.Location = new System.Drawing.Point(85, 133);
+            this.BtnContinue.Location = new System.Drawing.Point(89, 161);
             this.BtnContinue.Name = "BtnContinue";
             this.BtnContinue.Size = new System.Drawing.Size(168, 44);
             this.BtnContinue.TabIndex = 1;
@@ -66,7 +68,7 @@ namespace ContactBookApp
             this.LblMensaje.ForeColor = System.Drawing.Color.White;
             this.LblMensaje.Location = new System.Drawing.Point(12, 35);
             this.LblMensaje.Name = "LblMensaje";
-            this.LblMensaje.Size = new System.Drawing.Size(326, 68);
+            this.LblMensaje.Size = new System.Drawing.Size(326, 110);
             this.LblMensaje.TabIndex = 2;
             this.LblMensaje.Text = "label1";
             this.LblMensaje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -78,7 +80,7 @@ namespace ContactBookApp
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(350, 189);
+            this.ClientSize = new System.Drawing.Size(350, 217);
             this.Controls.Add(this.LblMensaje);
             this.Controls.Add(this.BtnContinue);
             this.Controls.Add(this.PnInit);
